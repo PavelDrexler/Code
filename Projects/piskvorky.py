@@ -1,6 +1,7 @@
 #Pavel Drexler
-#Tic-Tac-To project
+#Tic-Tac-Toe project
 #Python 3.8.0
+#version 0.1
 
 #Define field
 
@@ -38,10 +39,11 @@ def game():
 		valid = False
 		while not valid:
 			#  input validity check
-			if position == "666":
-				winner = "Drex you bitch!"
-				print (10*"*","Who dares wins.",10*"*")
-				return winner
+			#Cheat
+			#if position == "666":
+			#	winner = "Pavel!"
+			#	print (10*"*","Who dares wins.",10*"*")
+			#	return winner
 
 			while position not in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]:
 				position = input("Choose a position from 1-9: ")
