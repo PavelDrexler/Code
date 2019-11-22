@@ -34,11 +34,13 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish, 
 garpike and stingray are also present.'''
 ]
-users = {"bob" :"123",
- 		"ann" : "pass123"  ,  
- 		"mike": "password123", 
- 		"liz":  "pass123" 
-}
+Users = {
+		"bob":"123",
+ 		"ann":"pass123",  
+ 		"mike":"password123", 
+ 		"liz":"pass123" 
+		}
+
 loginOk = 0
 titleNum = 0
 upperNum = 0
@@ -50,24 +52,24 @@ wordLenFrq = dict()
 sortedDict = dict()
 
 
-print ('Welcome to the app. Please log in.')
+print('Welcome to the app. Please log in.')
 name = input('Name:')
 password = input('Password:')
 
-if name in users:
-	if users[name] == password :
-		print ("Login successful")
+if name in Users:
+	if Users[name] == password :
+		print("Login successful")
 		loginOk = 1
 	else:
-		print ("Wrong password.")
+		print("Wrong password.")
 		sys.exit()
 else:
-		print ("Wrong user name.")
+		print("Wrong user name.")
 		sys.exit()
 
-#login successful - select Text:  
+#_login successful - select Text:  
 if loginOk == 1:
-	print ("We have three texts to be analyzed.")
+	print("We have three texts to be analyzed.")
 	textNum =int(input("Enter a number btw. 1 and 3 to select:"))
 	if not (textNum >= 1 and textNum <= 3):
 		print("wrong number")
@@ -76,7 +78,7 @@ if loginOk == 1:
 		print("===Text analyzation started===")
 
 
-#analyze Text
+#_analyze Text
 splitText = TEXTS[textNum-1].split()
 total = len(splitText)
 
@@ -95,10 +97,10 @@ for word in splitText:
 	   wordLenFrq[length] = 0
 	wordLenFrq[length] += 1
 
-#write output
+#_write output
 for key in sorted(wordLenFrq.keys()):
-	print (key,"\t:","*"*int(wordLenFrq[key]), wordLenFrq[key])
-print ("Count of numeric only words is: ",numericValue)
+	print(key, "\t:","*"*int(wordLenFrq[key]), wordLenFrq[key])
+print("Count of numeric only words is: ", numericValue)
 
 
 

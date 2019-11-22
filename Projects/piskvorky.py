@@ -68,6 +68,7 @@ def piskvorky():
 		row_1 = fieldInput[0] == fieldInput[1] == fieldInput[2] != "-"
 		row_2 = fieldInput[3] == fieldInput[4] == fieldInput[5] != "-"
 		row_3 = fieldInput[6] == fieldInput[7] == fieldInput[8] != "-"
+		gameContinue = 1
 			
 		if row_1: 
 			winner = fieldInput[0]
@@ -104,10 +105,10 @@ def piskvorky():
 			gameContinue = 0
 
 		#Deuce
-		elif "-" not in fieldInput:
+		if "-" not in fieldInput:
 			winner = "Developer - you guys sux!"
 			gameContinue = 0
-		else:
+		elif gameContinue != 0:
 			winner = 0
 
 		return winner
