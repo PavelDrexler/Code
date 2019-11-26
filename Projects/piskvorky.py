@@ -64,12 +64,11 @@ def piskvorky():
 
 	#check if there is a winner:
 	def checkWinner(fieldInput):
-		#row
 		row_1 = fieldInput[0] == fieldInput[1] == fieldInput[2] != "-"
 		row_2 = fieldInput[3] == fieldInput[4] == fieldInput[5] != "-"
 		row_3 = fieldInput[6] == fieldInput[7] == fieldInput[8] != "-"
 		gameContinue = 1
-			
+		#row	
 		if row_1: 
 			winner = fieldInput[0]
 			gameContinue = 0
@@ -128,9 +127,7 @@ def piskvorky():
 
 	#Function of the game
 	while gameContinue:
-		#repeat game
-		displayField()
-		
+		displayField()		
 		field[int(getInput())] = player
 		print (separator)
 		playerWin = checkWinner(field)
